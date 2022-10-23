@@ -1,0 +1,25 @@
+<h2>ARTWORK</h2>
+
+<div class="container">
+  {{#if artwork}}
+    <h5>{{artwork.title}}.</h5>
+    {{#if isLoggedIn}}
+      <div class="float-right">
+        <a href="/updateArtwork/{{artwork.id}}"><button><i
+              class="icon icon-edit"
+            ></i></button></a>
+        <form action="/deleteArtwork/{{artwork.id}}" method="POST">
+          <button><i class="icon icon-delete"></i></button>
+        </form>
+      </div>
+    {{/if}}
+    <img
+      src="{{artwork.imageURL}}"
+      alt="{{artwork.description}}"
+      class="image-container-artwork"
+    />
+    <h5>{{artwork.description}}</h5>
+  {{else}}
+    <p>The artwork does not exist.</p>
+  {{/if}}
+</div>

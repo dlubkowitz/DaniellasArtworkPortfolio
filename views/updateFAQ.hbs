@@ -1,0 +1,30 @@
+<h2>UPDATE FAQ</h2>
+
+{{#if errorMessages.length}}
+  <p>Couldn't update the FAQ because:</p>
+  <ul>
+    {{#each errorMessages}}
+      <li>{{this}}</li>
+    {{/each}}
+  </ul>
+{{/if}}
+{{#if isLoggedInErrorMessage.length}}
+  <p>Authorization error:</p>
+  <ul>
+    {{#each isLoggedInErrorMessage}}
+      <li>{{this}}</li>
+    {{/each}}
+  </ul>
+{{/if}}
+
+<form method="POST">
+  <div>
+    Question
+    <input type="text" name="question" value="{{faqs.question}}" />
+  </div>
+  <div>
+    Answer
+    <input type="text" name="answer" value="{{faqs.answer}}" />
+  </div>
+  <input type="submit" value="Update FAQ" />
+</form>

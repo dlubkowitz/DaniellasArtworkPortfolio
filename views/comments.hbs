@@ -1,0 +1,48 @@
+<h2>COMMENTS</h2>
+
+<div class="container">
+  <div class="columns">
+    <div class="column col-6">
+      <div class="text-primary docs-block">
+        {{#if comments.length}}
+          {{#each comments}}
+            <div class="card pt-2">
+              <div class="card-header">
+                <div class="float-right">
+                  {{#if ../isLoggedIn}}
+                    <form action="/deleteComment/{{id}}" method="POST">
+                      <button><i class="icon icon-delete"></i></button>
+                    </form>
+                    <a href="/updateComments/{{id}}"><button>
+                    <i class="icon icon-edit"></i>
+                  </button></a>
+                  {{/if}}
+                </div>
+                <div class="card-title text-dark"><b>{{name}}</b></div>
+                <div class="card-subtitle text-dark"><i>"{{comment}}"</i></div>
+                <br>
+                <div class="card-subtitle text-dark"><b>Reply: </b>{{reply}}</div>
+              </div>
+            </div>
+          {{/each}}
+        {{else}}
+          <p>No comments to display at the moment.</p>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#unless isLoggedIn}}
+<h2>WRITE A COMMENT</h2>
+
+<button><a href="/createComment">Comment here!</a></button>
+{{#if errorMessages.length}}
+  <p>Couldn't create the artwork because:</p>
+  <ul>
+    {{#each errorMessages}}
+      <li>{{this}}</li>
+    {{/each}}
+  </ul>
+{{/if}}
+{{/unless}}

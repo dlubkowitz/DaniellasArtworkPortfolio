@@ -1,0 +1,22 @@
+<h2>LOG IN</h2>
+
+{{#if errorMessages.length}}
+  <p>Couldn't update the artwork because:</p>
+  <ul>
+    {{#each errorMessages}}
+      <li>{{this}}</li>
+    {{/each}}
+  </ul>
+{{/if}}
+
+<form action="" method="POST">
+  <div>
+    Username
+    <input type="text" name="username" />
+  </div>
+  <div>
+    Password
+    <input type="password" name="password" />
+  </div>
+  <input type="submit" value="Log in" />
+</form>

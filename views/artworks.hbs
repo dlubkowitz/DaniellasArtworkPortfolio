@@ -1,0 +1,14 @@
+<h2>ARTWORKS</h2>
+
+<div class="grid-container-artworks">
+  {{#if artworks.length}}
+    {{#each artworks}}
+      <div>
+        <a href="/artworks/{{id}}">
+          <img src="{{imageURL}}" class="image-container-artworks" /></a>
+      </div>
+    {{/each}}
+  {{else}}
+    <p>No artworks to display at the moment.</p>
+  {{/if}}
+</div>

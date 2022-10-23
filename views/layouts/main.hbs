@@ -1,0 +1,65 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ztiwo</title>
+    <link rel="stylesheet" href="/layout.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/spectre.css/dist/spectre.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css"
+    />
+  </head>
+  <body class="bg-black">
+
+    <header class="navbar">
+      <section class="navbar-section nav-bar-details">
+        <a href="/" class="navbar-brand mr-2 text-gray px-1">Home</a>
+        <a
+          href="/artworks"
+          class="navbar-brand mr-2 text-gray px-1"
+        >Artworks</a>
+        <a href="/about" class="navbar-brand mr-2 text-gray px-1">About</a>
+        <a
+          href="/comments"
+          class="navbar-brand mr-2 text-gray px-1"
+        >Comments</a>
+        <a href="/faqs" class="navbar-brand mr-2 text-gray px-1">FAQ</a>
+        <a href="/contact" class="navbar-brand mr-2 text-gray px-1">Contact</a>
+      </section>
+      <section class="navbar-center">
+      </section>
+      <section class="navbar-section nav-bar-details">
+        {{#if isLoggedIn}}
+          <a
+            href="/createArtworkPost"
+            class="navbar-brand mr-2 text-gray px-1"
+          >Create Post</a>
+        {{/if}}
+        {{#unless isLoggedIn}}
+          <a href="/login" class="navbar-brand mr-2 text-gray">Log In</a>
+        {{/unless}}
+        {{#if isLoggedIn}}
+          <a href="/logout" class="navbar-brand mr-2 text-gray">Log Out</a>
+        {{/if}}
+      </section>
+    </header>
+
+    <div class="login-container">
+      {{{body}}}
+    </div>
+
+    <footer class="text-gray">
+      Copyright Daniella Lubkowitz 2022
+    </footer>
+  </body>
+
+</html>

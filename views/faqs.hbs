@@ -1,0 +1,38 @@
+<h2>FAQ</h2>
+
+<div class="container">
+  <div class="columns">
+    <div class="column col-6">
+      <div class="text-primary docs-block">
+        {{#if faqs.length}}
+          {{#each faqs}}
+            <div class="card pt-2">
+              <div class="card-header">
+                {{#if ../isLoggedIn}}
+                <div class="float-right">
+                  <a href="/updateFAQ/{{id}}"><button>
+                    <i class="icon icon-edit"></i>
+                  </button></a>
+                  <form action="/deleteFaqs/{{id}}" method="POST">
+                    <button><i class="icon icon-delete"></i></button>
+                  </form>
+                </div>
+                {{/if}}
+                <div class="card-subtitle text-dark"><b>{{question}}</b></div>
+                <div class="card-subtitle text-dark"><i>{{answer}}</i></div>
+              </div>
+            </div>
+          {{/each}}
+        {{else}}
+          <p>No questions to display at the moment.</p>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#unless isLoggedIn}}
+<h2>ASK A QUESTION</h2>
+
+<button><a href="/askFAQ">Ask a question</a></button>
+{{/unless}}

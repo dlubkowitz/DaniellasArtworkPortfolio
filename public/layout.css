@@ -1,0 +1,95 @@
+.bg-black {
+  background-color: black;
+  color: white;
+}
+
+.headline-details {
+  font-size: 4em;
+  color: white;
+  margin-left: 1em;
+}
+
+.h2-details {
+  margin-left: 2em;
+}
+
+.nav-bar-details {
+  margin: 20px;
+}
+
+.h1-headline-pages {
+  margin-left: 1em;
+}
+
+p {
+  color: rgb(164, 164, 164);
+}
+
+.p-margin {
+  margin: 3em;
+}
+
+footer {
+  text-align: center;
+  padding: 2em;
+}
+
+h2 {
+  margin-bottom: 5em;
+}
+
+.login-container {
+  margin-left: 1em;
+}
+
+/*
+https://stackoverflow.com/questions/4394309/how-do-i-fit-an-image-img-inside-a-div-and-keep-the-aspect-ratio - Accessed 2022-10-02.
+*/
+.image-container-artwork {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.image-container-artworks {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  text-align: center;
+}
+
+.grid-container-artworks {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 20px;
+  padding: 10px;
+}
+
+.grid-container-artwork > div {
+  text-align: center;
+  font-size: 30px;
+}
+
+.faq-details {
+  margin-bottom: 20px;
+}
+
+h5 {
+  text-align: center;
+}
+
+.grid-container-comments {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 20px;
+  padding: 10px;
+}
+
+.grid-container-comments > div {
+  text-align: left;
+}
+
+.comments-name-details {
+  text-align: right;
+  font-size: 10px;
+}
